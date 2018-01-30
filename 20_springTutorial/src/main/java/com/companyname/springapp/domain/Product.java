@@ -2,9 +2,26 @@ package com.companyname.springapp.domain;
 
 import java.io.Serializable;
 
-public class Product implements Serializable {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-	    private static final long serialVersionUID = 1L;
+
+@Entity
+@Table(name="products") 
+public class Product implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    
+    
 
 	    private String description;
 	    private Double price;
@@ -24,6 +41,16 @@ public class Product implements Serializable {
 	    public void setPrice(Double price) {
 	        this.price = price;
 	    }
+	    
+	    public Integer getId()
+	    {
+	        return id;
+	    }
+
+	    public void setId(Integer id)
+	    {
+	        this.id = id;
+	    } 
 	    
 	    public String toString() {
 	        StringBuffer buffer = new StringBuffer();
