@@ -55,6 +55,12 @@ public class HelloController {
 	        String nombre= "Juan";
 	        return new ModelAndView("servicios", "minombre", nombre);
 	    }
+	    
+//	    @RequestMapping(value="/priceincrease.htm")
+//	    public ModelAndView llamarPrice(HttpServletRequest request, HttpServletResponse response)
+//	            throws ServletException, IOException {
+//	        return new ModelAndView("priceincrease");
+//	    }
 
 }
 
